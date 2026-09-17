@@ -1,0 +1,13 @@
+.DS_Store
+
+# LaTeX aux files (in case anything is built in-tree)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+

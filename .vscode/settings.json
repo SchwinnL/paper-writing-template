@@ -1,0 +1,23 @@
+{
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": true,
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "make",
+            "tools": [
+                "make"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "make",
+            "command": "make",
+            "args": [
+                "DOC=%DOCFILE%"
+            ]
+        }
+    ]
+}
