@@ -1,0 +1,164 @@
+\documentclass{article}
+
+% ready for submission
+%\usepackage[accepted]{icml2026}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{svg}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage{icml2026}
+
+
+% From ICML
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{dsfont}
+\usepackage[most]{tcolorbox}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{csquotes}
+
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{multirow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+% custom from us
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.85}
+\definecolor{darkgray}{gray}{0.7}
+%\definecolor{customblue}{rgb}{0.8, 0.9, 1}
+\definecolor{customblue}{rgb}{0.27, 0.36, 0.55}
+
+% Todonotes is useful during development; simply uncomment the next line
+%    and comment out the line below the next line to turn off comments
+\usepackage[disable,textsize=tiny]{todonotes}
+\usepackage{array}
+\usepackage{makecell}
+%\usepackage[textsize=tiny]{todonotes}
+
+\input{math_commands.tex}
+
+\newlength{\myboxwidth}
+\setlength{\myboxwidth}{7cm}
+\newcommand{\myfont}{
+    %\large       % Font size
+    \ttfamily    % Typewriter (monospace) font
+}
+
+
+\begin{document}
+
+\twocolumn[
+
+\icmltitle{\texorpdfstring{Position: We Need to Realign Incentives for Meaningful Progress\\in Adversarial Alignment for LLMs}{Realigned Incentives for Adversarial Alignment}}
+
+% It is OKAY to include author information, even for blind
+% submissions: the style file will automatically remove it for you
+% unless you've provided the [accepted] option to the icml2025
+% package.
+
+% List of affiliations: The first argument should be a (short)
+% identifier you will use later to specify author affiliations
+% Academic affiliations should list Department, University, City, Region, Country
+% Industry affiliations should list Company, City, Region, Country
+
+% You can specify symbols, otherwise they are numbered in order.
+% Ideally, you should not use this facility. Affiliations will be numbered
+% in order of appearance and this is the preferred way.
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Anonym}{}
+
+
+%\icmlauthor{}{sch}
+%\icmlauthor{}{sch}
+\end{icmlauthorlist}
+
+\icmlaffiliation{Anonym}{Anonym}
+\icmlcorrespondingauthor{Anonym}{Anonym}
+
+% You may provide any keywords that you
+% find helpful for describing your paper; these are used to populate
+% the "keywords" metadata in the PDF but will not be shown in the document
+\icmlkeywords{Machine Learning, ICML, LLM robustness, judging, autograder}
+
+\vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column
+% listing the affiliations and the copyright notice.
+% The command takes one argument, which is text to display at the start of the footnote.
+% The \icmlEqualContribution command is standard text for equal contribution.
+% Remove it (just {}) if you do not need this facility.
+
+%\printAffiliationsAndNotice{}  % leave blank if no need to mention equal contribution
+\printAffiliationsAndNotice{\icmlEqualContribution} % otherwise use the standard text.
+
+\begin{abstract}
+Misaligned research objectives have considerably hindered progress in adversarial robustness research over the past decade.
+For instance, an extensive focus on optimizing target metrics, while neglecting rigorous standardized evaluation, has led researchers to pursue ad-hoc heuristic defenses that were seemingly effective. Yet, most of these were exposed as flawed by subsequent evaluations, ultimately contributing little measurable progress to the field.
+In this position paper, we illustrate that current research on the robustness of large language models (LLMs) risks repeating past patterns with potentially worsened real-world implications. To address this, we argue that \textbf{realigned objectives are necessary for meaningful progress in adversarial alignment.}
+To this end, we build on established cybersecurity taxonomy to formally define differences between past and emerging threat models that apply to LLMs.
+Using this framework, we illustrate that progress requires disentangling adversarial alignment into addressable sub-problems and returning to core academic principles, such as measurability, reproducibility, and comparability.
+Although the field presents significant challenges, the fresh start on adversarial robustness offers the unique opportunity to build on past experience while avoiding previous mistakes.
+\end{abstract}
+
+
+\input{parts/intro}
+\input{parts/taxonomy}
+\input{parts/main_paper.tex}
+
+%\section*{Impact Statement}\label{app:impact}
+%Adversarial attacks on LLMs can have considerable consequences in real-world applications. Still, as machine-learning robustness has been an unsolved research problem for the last decade, we believe that the best way to approach this problem is through culminating awareness. Currently, it seems unlikely that the robustness issue can be completely resolved through technical means. Thus, making people aware of the harmful use cases and limitations of these models appears to be necessary to avoid irresponsible deployment of such models for critical applications and to reduce the harm malicious actors can cause. Moreover, this work does not introduce new technical innovations. Instead, it addresses impediments in robustness research and explores potential solutions to accelerate research progress.
+
+
+\bibliographystyle{icml2026}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\appendix
+
+\section{Appendix}
+
+
+\input{parts/appendix}
+
+\end{document}
